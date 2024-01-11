@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int randomNumber(int range) {
+    srand(time(NULL));
+    int random = rand() % range;
+    return random;
+}
+
+void main() {
+    
+    int n = randomNumber(100);
+    int arr[5];
+    int *pointer = arr;
+    
+    for (int i = 0; i < 5; i++) {
+        *(pointer + i) = n;
+    }
+    
+    for (int j = 0; j < 5; j++) {
+        printf(" %d ", arr[j]);
+    }
+    
+}
